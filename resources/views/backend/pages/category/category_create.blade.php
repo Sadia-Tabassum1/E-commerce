@@ -1,6 +1,15 @@
 @extends('master')
 @section('content')
 <div class="container">
+
+@if ($errors->any())
+  @foreach($errors->all() as $error)
+    <div>
+      <p class="alert-danger"> {{$error}} </p>
+  </div>
+  @endforeach
+  @endif
+
 <form action="{{route('category.store')}}" method="post" enctype="multipart/form-data">
 
   @csrf

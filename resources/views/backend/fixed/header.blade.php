@@ -61,21 +61,28 @@
 
                     <!-- ============================================================== -->
                     <!-- Right side toggle and nav items -->
+
+                    <div class="dropdown">
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                    </div>
                     <!-- ============================================================== -->
                     <ul class="navbar-nav">
                         <!-- ============================================================== -->
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="../assets/images/users/1.jpg" alt="user" class="profile-pic me-2">
-        Sadia
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><a class="dropdown-item" href="#">Profile</a></li>
-        <li><a class="dropdown-item" href="#">Logout</a></li>
-    </ul>
-</li>
+                            <ul>
+                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="{{route('admin.do-logout')}}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Logout</a>
+                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="../assets/images/users/1.jpg" alt="user" class="profile-pic me-2">
+                            Sadia
+                        </a>
+                        
+                    </li>
 
                     </ul>
                 </div>

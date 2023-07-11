@@ -28,19 +28,15 @@ class UserController extends Controller
         }
         return redirect()->back()->with('msg','Invalid login information');
 
-
-
     }
 
-//    public function logout() 
-//    {
+   public function logout() 
+   {
 
+    Auth::logout();
+    return redirect()->route('admin.login')->with('msg','Logout success');
 
-
-//     Auth::logout();
-//     return redirect()->route('admin.login')->with('msg','Logout success');
-
-//    }
+   }
 
 
 }

@@ -23,6 +23,12 @@ class CategoryController extends Controller
         // dd($request->file('image'));
         // dd(date('Ymdhsi'));
         //validation should be there
+        $request->validate
+        ([
+            'Category_Name' =>'required',
+            'Category_Description' =>'required',
+        ]);
+        
 
        if($request->hasFile('image'))
         {
@@ -39,13 +45,5 @@ class CategoryController extends Controller
     ]);
         return redirect()->route('category');
         
-    }
-    public function logout()
-    {
-auth()->logout();
-
-return redirect()->route('admin.do-login')->with('msg','logout successfully.');
-
-
     }
 }
