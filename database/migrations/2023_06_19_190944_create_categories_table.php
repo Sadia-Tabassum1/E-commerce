@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name',100);
             $table->text('description')->nullable();
-            $table->string('status')->default('active');
+            $table->string('status',lenght:10)->default('active');
             $table->string('image')->nullable();
             $table->string('email')->nullable();
             

@@ -1,7 +1,8 @@
 @extends('master')
 @section('content')
 <div class="container">
-<form action="{{route('category.store')}}" method="post">
+<form action="{{route('category.store')}}" method="post" enctype="multipart/form-data">
+
   @csrf
   <div class="mb-2">
     <label for="exampleInputName" class="form-label">Name</label>
@@ -12,14 +13,15 @@
     <label for="exampleInputDescription" class="form-label">Description</label>
     <input name="Category_Description" type="text" class="form-control" id="exampleInputPassword1">
   </div>
+  <div class="mb-3">
+    <label for="exampleInputDescription" class="form-label">Status</label>
+    <input name="Category_Description" type="text" class="form-control" id="exampleInputPassword1">
+  </div>
   <div class="mb-4">
-    <label for="exampleInputImage" class="form-label">Image</label>
-    <input name="Category_Image" type="file" class="form-control" id="exampleInputPassword1">
+    <label name="image"  for="exampleInputImage" class="form-label">Image</label>
+    <input name="image" type="file" class="form-control" id="exampleInputPassword1">
   </div>
-  <div class="mb-5">
-    <label for="exampleInputEmail" class="form-label">Email</label>
-    <input name="Category_Image" type="text" class="form-control" id="exampleInputPassword1">
-  </div>
+
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </div>

@@ -1,5 +1,12 @@
 @extends('master')
 @section('content')
+
+@if(session('msg'))
+    <div class="alert alert-sucess">
+            {{session('msg')}}
+    </div>
+
+@endif
 <div class="page-breadcrumb">
                 <div class="row align-items-center">
                     <div class="col-md-6 col-8 align-self-center">
