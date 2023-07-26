@@ -5,10 +5,9 @@
                     <!-- Logo -->
                     <!-- ============================================================== -->
                     <a class="navbar-brand ms-4" href="index.html">
-                        <!-- Logo icon -->
+                        <!-- Logno ico -->
                         <b class="logo-icon">
-                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                            <!-- Dark Logo icon -->
+
                             <img src="../assets/images/logo-light-icon.png" alt="homepage" class="dark-logo" />
 
                         </b>
@@ -16,7 +15,8 @@
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            <img src="../assets/images/logo-light-text.png" alt="homepage" class="dark-logo" />
+                            <h5>Black Apple</h5>
+                            <!-- <img src="../assets/images/logo-light-text.png" alt="homepage" class="dark-logo" /> -->
 
                         </span>
                     </a>
@@ -76,12 +76,13 @@
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
                             <ul>
-                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="{{route('admin.do-logout')}}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Logout</a>
                         <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <img src="../assets/images/users/1.jpg" alt="user" class="profile-pic me-2">
                             Sadia
                         </a>
-                        
+                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="{{route('admin.do-logout')}}" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Logout</a>
+
+                        <div class="dropdown">
                     </li>
 
                     </ul>

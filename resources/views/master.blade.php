@@ -11,7 +11,7 @@
     <meta name="description"
         content="Material Pro Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
-    <title>Material Pro Lite Template by WrapPixel</title>
+    <title>Inventory</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/materialpro-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{url('assets/images/favicon.png')}}">
@@ -20,7 +20,7 @@
     <link href="{{url('assets/plugins/chartist-js/dist/chartist-init.css')}}" rel="stylesheet">
     <link href="{{url('assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css')}}" rel="stylesheet">
     <!--This page css - Morris CSS -->
-    <link href="{{url('assets/plugins/c3-master/c3.min.css')}}" rel="stylesheet">
+    <link href="{{url('rontend/assets/plugins/c3-master/c3.min.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{url('css/style.min.css')}}" rel="stylesheet">
 </head>
@@ -60,13 +60,19 @@
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
         <div class="page-wrapper">
-            <!-- ============================================================== -->
-            <!-- Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-
-                                @yield('content')
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- column -->
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
                                 
-                          
+                                    @yield('content')
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>               
         </div>
             
            
@@ -89,26 +95,26 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="{{('assets/plugins/jquery/dist/jquery.min.js"></script>
+    <script src="{{url('assets/plugins/jquery/dist/jquery.min.js')}}"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="{{('assets/plugins/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/app-style-switcher.js"></script>
+    <script src="{{url('assets/plugins/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{url('js/app-style-switcher.js')}}"></script>
     <!--Wave Effects -->
-    <script src="js/waves.js"></script>
+    <script src="{{url('js/waves.js')}}"></script>
     <!--Menu sidebar -->
-    <script src="js/sidebarmenu.js"></script>
+    <script src="{{url('js/sidebarmenu.js')}}"></script>
     <!-- ============================================================== -->
     <!-- This page plugins -->
     <!-- ============================================================== -->
     <!-- chartist chart -->
-    <script src="{{('assets/plugins/chartist-js/dist/chartist.min.js"></script>
-    <script src="{{('assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js"></script>
+    <script src="{{url('assets/plugins/chartist-js/dist/chartist.min.js')}}"></script>
+    <script src="{{url('assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js')}}"></script>
     <!--c3 JavaScript -->
-    <script src="{{('assets/plugins/d3/d3.min.js"></script>
-    <script src="{{('assets/plugins/c3-master/c3.min.js"></script>
+    <script src="{{url('assets/plugins/d3/d3.min.js')}}"></script>
+    <script src="{{url('assets/plugins/c3-master/c3.min.js')}}"></script>
     <!--Custom JavaScript -->
-    <script src="js/pages/dashboards/dashboard1.js"></script>
-    <script src="js/custom.js"></script>
+    <script src="{{url('js/pages/dashboards/dashboard1.js')}}"></script>
+    <script src="{{url('js/custom.js')}}"></script>
 </body>
 
 </html>

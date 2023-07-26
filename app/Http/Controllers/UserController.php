@@ -34,9 +34,7 @@ class UserController extends Controller
    {
 
     Auth::logout();
-    return redirect()->route('admin.login')->with('msg','Logout success');
+    return redirect()->route('login')->with('msg','Logout success');
 
    }
-
-
 }

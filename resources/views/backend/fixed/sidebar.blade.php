@@ -22,9 +22,17 @@
                             </li>
                             <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="{{route('product')}}" aria-expanded="false"><i class="mdi me-2 mdi-gauge"></i><span
-                                    class="hide-menu">product</span>
+                                    class="hide-menu">Product</span>
                                 </a>
                             </li>
+
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                                href="{{route('report')}}" aria-expanded="false"><i class="mdi me-2 mdi-gauge"></i><span
+                                    class="hide-menu">Product Report</span>
+                                </a>
+                            </li>
+
+                            
                       
             <!-- End Sidebar scroll-->
      
