@@ -32,7 +32,7 @@
                         <td>{{$value->status}}</td>
                         <td >
                             <a class="btn btn-success" href="">Show</a>
-                            <a class="btn btn-info" href="">Edit</a>
+                            <a class="btn btn-info" href="{{route('product.edit',$value->id)}}">Edit</a>
                             <a class="btn btn-danger" href="{{route('product.delete',$value->id)}}">Delete</a>
                         </td>
                     </tr>

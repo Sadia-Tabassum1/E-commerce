@@ -64,31 +64,41 @@ class ProductController extends Controller
     public function edit($id)
     {
         $products = Product::find($id);
-        return view('backend.pages.category.edit_category',compact('category'));
+        $categories=Category::all();
+        return view('backend.pages.product.edit_product',compact('products','categories'));
     }
    
     public function update(Request $request,$id)
     {
-        $request->validate
-        ([
-            'Category_Name' =>'required',
-            'Category_Description' =>'required',
+       
+
+
+
+        $request->validate([
+            'Product_Name'=>'required',
+            // 'product_image'=>'required',
+            'product_price'=>'required|gt:100',
+            'product_stock'=>'required|gt:10',
+            'category_id'=>'required'
         ]);
         
-
-//        if($request->hasFile('image'))
-//         {
-//             $image=$request->file('image');//
-//             $fileName='IMG-'.date('Ymdhsi').'.'.$image->getClientOriginalExtension();//generate file name
-// // dd($fileName);
-//             $image->storeAs('/category',$fileName);
-//         }
-  $category = Category::find($id);
-        $category->update([
-            'name'=> $request->Category_Name,
-            'description'=>$request->Category_Description
-         ]);
-        return redirect()->route('category');
+    //    if($request->hasFile('product_image'))
+    //     {
+    //         $image=$request->file('product_image');//
+    //         $fileName='IMG-'.date('Ymdhsi').'.'.$image->getClientOriginalExtension();//generate file name
+    //     // dd($fileName);
+    //         $image->storeAs('/product',$fileName);
+    //     }
+    $products = Product::find($id);
+    $products->update([
+            'name'=>$request->Product_Name,
+            'category_id'=>$request->category_id,
+            'price'=>$request->product_price,
+            'quantity'=>$request->product_stock,
+            'description'=>$request->Product_Description,
+            // 'image'=>$fileName
+        ]);
+        return redirect()->back();
 
     }
 

@@ -8,6 +8,7 @@ use  App\Http\Controllers\ProductController;
 use  App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\WebsiteProductController;
+use App\Models\Product;
 use Illuminate\Routing\Router;
 
 // Frontend............................
@@ -27,7 +28,7 @@ Route::post('/do-login',[CustomerController::class,'dologin'])->name('customer.d
 
 
 
- Route::get('/admin/login',[UserController::class,'login'])->name('login');
+ Route::get('/admin/login',[UserController::class,'login'])->name('admin.login');
  Route::post('/admin/do-login',[UserController::class,'loginf'])->name('admin.do-login');
 
 Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
@@ -58,6 +59,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
     Route::post('/product_store',[productController::class, 'store'])->name('product.store');
 
     Route::get('/product_edit/{id}',[ProductController::class, 'edit'])->name('product.edit');
+    Route::put('/product_update/{id}',[ProductController::class, 'update'])->name('product.update');
     Route::get('/product_delete/{id}',[ProductController::class, 'delete'])->name('product.delete');
     Route::get('/product_show/{id}',[ProductController::class, 'show'])->name('product.show');
 
