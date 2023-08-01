@@ -52,12 +52,29 @@
           <li class="dropdown"><a href="#"><span>Abaya</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               @foreach($cats as $category)
-              <li><a href="team.html">{{$category->name}}</a></li>
+              <li><a href="{{Route('categorywise.ptoduct',$category->id)}}">{{$category->name}}</a></li>
               @endforeach
                  
             </ul>
           </li>
-          <li><a href="services.html">Hijab</a></li>
+          <li class="dropdown"><a href="#"><span>Hijab</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              
+              <li><a href="team.html">Cotton Hijab</a></li>
+              <li><a href="team.html">Silk Hijab</a></li>
+                 
+            </ul>
+          </li>
+          <!-- <li class="dropdown">
+                <a href="#"><span>Hijab</span> 
+                  <i class="bi bi-chevron-down dropdown-indicator"></i>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="">Black Hijab</a></li>                  
+                  <li><a href="">Color Hijab</a></li>
+                  
+                </ul>     -->
+           <!-- <li><a href="services.html">Hijab</a></li> -->
           <li><a href="blog.html">Blog</a></li>
           <li><a href="portfolio.html">Reviews</a></li>
 

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Category;
-
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 
@@ -47,11 +47,6 @@ class CategoryController extends Controller
         return redirect()->route('category');
         
     }
-    public function edit($id)
-    {
-        $category = Category::find($id);
-        return view('backend.pages.category.edit_category',compact('category'));
-    }
     public function delete($id)
     {
         $category=Category::find($id);
@@ -59,15 +54,19 @@ class CategoryController extends Controller
         return redirect()->route('category')->with('msg','Category Delete Success.');
 
     }
-    public function update(Request $request)
+    public function edit($id)
+    {
+        $category = Category::find($id);
+        return view('backend.pages.category.edit_category',compact('category'));
+    }
+   
+    public function update(Request $request,$id)
     {
         $request->validate
         ([
             'Category_Name' =>'required',
             'Category_Description' =>'required',
         ]);
-        
-
 //        if($request->hasFile('image'))
 //         {
 //             $image=$request->file('image');//
@@ -75,13 +74,26 @@ class CategoryController extends Controller
 // // dd($fileName);
 //             $image->storeAs('/category',$fileName);
 //         }
-
-        Category::update ([
-            'name'=>$request->Category_Name,
+  $category = Category::find($id);
+        $category->update([
+            'name'=> $request->Category_Name,
             'description'=>$request->Category_Description
-    ]);
+         ]);
         return redirect()->route('category');
-
     }
+    public function categoryType($type)
+    {
+        $category = Category::where('name',$type)->get();
+        return view('Frontend.pages.category.type',compact($category));
+    }
+    public function CategoryWiseProduct($id)
+    {
+        // $id = Crypt::decrypt($encryptID);
 
+   
+        $singleCategory=Category::with('products')->find($id);
+
+        // dd($singleCategory);
+        return view('Frontend.pages.category-wise-product',compact('singleCategory'));
+    }
 }

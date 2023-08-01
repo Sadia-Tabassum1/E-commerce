@@ -27,7 +27,7 @@
         <input value="{{request()->to_date}}" name="to_date" type="date" class="form-control">
     </div>
     <div class="col-md-4">
-        <button type="submit" class="btn btn-success">Search</button>
+        <button type="submit" class="btn btn-danger">Search</button>
     </div>
 </div>
 
@@ -64,7 +64,7 @@
         </tbody>
     </table>
 </div>
-<button onclick="printDiv('productReport')" class="btn btn-success">Print</button>
+<button onclick="printDiv('productReport')" class="btn btn-danger">Print</button>
 
 
 <script>

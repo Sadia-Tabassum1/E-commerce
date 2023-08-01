@@ -61,6 +61,36 @@ class ProductController extends Controller
         return redirect()->route('product')->with('msg','Product Delete Success.');
 
     }
+    public function edit($id)
+    {
+        $products = Product::find($id);
+        return view('backend.pages.category.edit_category',compact('category'));
+    }
+   
+    public function update(Request $request,$id)
+    {
+        $request->validate
+        ([
+            'Category_Name' =>'required',
+            'Category_Description' =>'required',
+        ]);
+        
+
+//        if($request->hasFile('image'))
+//         {
+//             $image=$request->file('image');//
+//             $fileName='IMG-'.date('Ymdhsi').'.'.$image->getClientOriginalExtension();//generate file name
+// // dd($fileName);
+//             $image->storeAs('/category',$fileName);
+//         }
+  $category = Category::find($id);
+        $category->update([
+            'name'=> $request->Category_Name,
+            'description'=>$request->Category_Description
+         ]);
+        return redirect()->route('category');
+
+    }
 
 
     public function report(){

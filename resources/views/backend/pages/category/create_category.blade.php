@@ -14,11 +14,19 @@
       <form action="{{route('category.store')}}" method="post" enctype="multipart/form-data">
 
             @csrf
-            <div class="mb-2">
+            <!-- <div class="mb-2">
               <label for="exampleInputName" class="form-label">Name</label>
               <input name="Category_Name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
               <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-            </div>
+            </div> -->
+            <label for="name">  Name:</label>
+    <select id="name" name="name" class="custom-dropdown" >
+    
+      <option >Black Abaya</option>
+      <option >Color Abaya</option>
+      
+  
+    </select>
             <div class="mb-3">
               <label for="exampleInputDescription" class="form-label">Description</label>
               <input name="Category_Description" type="text" class="form-control" id="exampleInputPassword1">
